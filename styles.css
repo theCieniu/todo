@@ -1,50 +1,113 @@
 *, *::before, *::after {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   width: 100vw;
+  min-height: 100vh;
   overflow-x: hidden;
-  --dark: #222222;
-  --medium: #777777;
-  --light: #aaaaaa;
-  --accent: #123456;
-  --bcgcolor: #eeeeee;
-  font-family: ;
-  color: var(--dark);
+  --dark: #010101;
+  --light: #ffffff;
+  --color1: #b7e841;
+  --color2: #32c8b3;
+  --bgcolor: #eeeeee;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color1);
+  background-image: linear-gradient(120deg, var(--color1), var(--color2));
+  background-repeat: no-repeat;
+  color: var(--light);
 }
 
 img {
   width: 100%;
 }
 
-a:link, a:visited {
-  color: (internal value);
+a, a:link, a:visited {
+  color: var(--light);
   text-decoration: none;
   cursor: auto;
 }
 
+a:hover {
+  color: var(--dark);
+}
+
 a:link:active, a:visited:active {
-  color: (internal value);
+  color: var(--light);
 }
 
 /*======= TYPOGRAPHY ===========*/
-/*======= NAVIGATION ===========*/
-/*======= SECTION ===========*/
-/*======= SECTION ===========*/
-/*======= SECTION ===========*/
-/*======= SECTION ===========*/
-/*======= SECTION ===========*/
-/*======= SECTION ===========*/
-/*======= MEDIA QUERY ===========*/
-@media (min-width:700px) {
-  /*======= ================= ===========*/
-  /*======= ================== ===========*/
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 1em auto;
 }
 
-@media (min-width:1000px) {
-  /*======= ================= ===========*/
-  /*======= ================== ===========*/
+/*======= NAVIGATION ===========*/
+nav {
+  background-color: var(--color1);
+}
+
+nav ol {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 1em;
+}
+
+nav li {
+  color: var(--dark);
+  font-size: 1rem;
+  margin: 0.4em;
+}
+
+/*======= MAIN SECTION ===========*/
+main {
+  width: 90vw;
+  max-width: 1000px;
+  margin: 1rem auto;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form input {
+  max-width: 80%;
+  outline-color: var(--color2);
+}
+
+form input, form button {
+  background: var(--light);
+  color: var(--dark);
+  border: none;
+  font-size: 2rem;
+  padding: 0.5em;
+}
+
+form button {
+  background-color: var(--color2);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--color1);
+}
+
+/*======= FOOTER  ===========*/
+footer {
+  background-color: var(--color2);
+  color: var(--light);
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  padding: 0.5em;
 }
