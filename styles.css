@@ -101,6 +101,45 @@ form button:hover {
   background-color: var(--color1);
 }
 
+/*======= TO DO LIST  ===========*/
+.todo-list {
+  font-size: 1.6rem;
+  width: 80%;
+  margin: 1em auto;
+}
+
+.todo-list li {
+  margin: 1em;
+  display: flex;
+  justify-content: space-between;
+  padding:.5em;
+  border: 2px solid rgba(255,255,255,.2);
+  border-radius: 1em;
+
+}
+
+.todo-list li:hover {
+  border: 2px solid rgba(255,255,255,1);
+
+  box-sizing: border-box;
+}
+
+.list-btn {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+  opacity: 50%;
+  outline: none;
+  margin-left: 0.6em;
+}
+
+.checked-btn:hover {
+  opacity: 100%;
+
+}
+
+
 /*======= FOOTER  ===========*/
 footer {
   background-color: var(--color2);
