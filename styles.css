@@ -138,8 +138,31 @@ form button:hover {
   opacity: 100%;
 }
 
-.fa-trash-alt, .fa-check-square {
+.fa-trash-alt, .fa-check-square, .fa-exclamation {
   pointer-events: none;
+}
+
+.priorityTask {
+  background: var(--light);
+  color: var(--dark);
+  opacity: 100%;
+}
+
+.priorityTask button {
+  color: var(--dark);
+  opacity: 30%;
+}
+
+.priorityTask .priority {
+  opacity: 60%;
+}
+
+.priorityTask button:hover, {
+  opacity: 60%;
+}
+
+.priorityTask .priority:hover {
+  opacity: 100%;
 }
 
 .checked {

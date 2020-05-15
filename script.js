@@ -34,6 +34,11 @@ function newTodo(event) {
   checkBtn.classList.add("list-btn");
   checkBtn.innerHTML = '<i class="far fa-check-square"></i>';
   listBtns.appendChild(checkBtn);
+  const priorityBtn = document.createElement("button");
+  priorityBtn.classList.add("priority");
+  priorityBtn.classList.add("list-btn");
+  priorityBtn.innerHTML = '<i class="fas fa-exclamation"></i>';
+  listBtns.appendChild(priorityBtn);
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("delete-btn");
   deleteBtn.classList.add("list-btn");
@@ -49,8 +54,8 @@ function newTodo(event) {
 
 function listBtn(event) {
   const item = event.target
+  let task = item.parentNode.parentNode;
   if (item.classList[0] === "delete-btn") {
-    let task = item.parentNode.parentNode;
     task.classList.add("deleting");
     task.addEventListener("transitionend", () => {
       event.target.parentNode.parentNode.remove();
@@ -65,5 +70,8 @@ function listBtn(event) {
       item.classList.add("checked")
       item.innerHTML = '<i class="fas fa-check-square"></i>'
     }
+  } else if (item.classList[0] === "priority") {
+    task.classList.toggle("priorityTask");
+    item.parentNode.classList.toggle("priority-btns");
   }
 }
