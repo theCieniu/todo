@@ -43,8 +43,6 @@ a:link:active, a:visited:active {
 /*======= TYPOGRAPHY ===========*/
 h1 {
   font-size: 2rem;
-  text-align: center;
-  margin: 1em auto;
 }
 
 /*======= NAVIGATION ===========*/
@@ -77,6 +75,7 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 2em auto;
 }
 
 form input {
@@ -102,6 +101,30 @@ form button {
 form button:hover {
   background-color: var(--color1);
 }
+
+/*======= FILTER  ===========*/
+.title {
+  display: flex;
+  max-width: 485px;
+  margin: 1.5em auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+select {
+  border: none;
+  outline: none;
+  background-color: var(--color2);
+  color: white;
+  padding: 0.4em;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+select:hover {
+  background-color: var(--color1);
+}
+
 
 /*======= TO DO LIST  ===========*/
 .todo-list {

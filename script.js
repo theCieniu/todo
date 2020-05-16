@@ -22,7 +22,7 @@ function newTodo(event) {
   const newTodo = document.createElement("li");
   const todoText = document.createElement("div");
   if (todoInput.value === "") {
-    todoText.textContent = "drzemka"
+    todoText.textContent = "take a nap"
   } else {
     todoText.textContent = todoInput.value;
   }
