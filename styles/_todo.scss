@@ -1,0 +1,126 @@
+/*======= TASK INPUT ===========*/
+main {
+  width: 90vw;
+  max-width: 1000px;
+  margin: 1rem auto;
+}
+
+form {
+  @include flex(row, center, center);
+  margin: 2em auto;
+
+  input {
+    max-width: 80%;
+    outline-color: $color2;
+  }
+  input,
+  button {
+    font-size: calc(1.2rem + 1vw);
+    background: $light;
+    color: $dark;
+    border: none;
+    padding: 0.5em;
+  }
+  button {
+    background-color: $color2;
+    color: $light;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: $color1;
+    }
+  }
+}
+
+/*======= TITLE AND FILTER  ===========*/
+.title {
+  @include flex(row, space-between, center);
+  max-width: 485px;
+  margin: 1.5em auto;
+}
+
+select {
+  border: none;
+  outline: none;
+  background-color: $color2;
+  color: $light;
+  padding: 0.4em;
+  font-size: 1.2em;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  &:hover {
+    background-color: $light;
+    color: $dark;
+  }
+}
+
+/*======= TO DO LIST  ===========*/
+.todo-list {
+  font-size: 1.6rem;
+  margin: 1em auto;
+
+  li {
+    margin: 1em;
+    @include flex(row, space-between, center);
+    padding: 0.5em;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1em;
+    transition: all 0.5s ease;
+    font-size: calc(1.2rem + 1vw);
+    &:hover {
+      border: 2px solid rgba(255, 255, 255, 1);
+    }
+  }
+}
+
+.list-btn {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+  opacity: 50%;
+  outline: none;
+  margin-left: 0.6em;
+  cursor: pointer;
+  &:hover {
+    opacity: 100%;
+  }
+}
+
+.fa-trash-alt,
+.fa-check-square,
+.fa-exclamation {
+  font-size: calc(1.2rem + 1vw);
+  pointer-events: none;
+}
+
+.priorityTask {
+  background: $light;
+  color: $dark;
+  opacity: 100%;
+}
+
+.priorityTask button {
+  color: $dark;
+  opacity: 30%;
+  &:hover {
+    opacity: 60%;
+  }
+}
+
+.priorityTask .priority {
+  opacity: 60%;
+  &:hover {
+    opacity: 100%;
+  }
+}
+
+.checked {
+  text-decoration: line-through;
+  opacity: 30%;
+}
+
+.deleting {
+  transform: translateY(8em) rotateZ(20deg);
+  opacity: 0;
+}

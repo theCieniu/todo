@@ -1,0 +1,15 @@
+header {
+  width: 100%;
+}
+nav {
+  background-color: $color1;
+  ol {
+    list-style: none;
+    @include flex(row, flex-end, center);
+    margin-right: 1em;
+  }
+  li {
+    color: $dark;
+    margin: 0.5em 1em;
+  }
+}

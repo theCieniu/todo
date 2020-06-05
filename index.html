@@ -1,57 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TODO app</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <meta name="author" content="Paulina Weiher" />
+    <meta name="keywords" content="todo list project app" />
+    <meta name="description" content="Interactive to do list of daily tasks" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>TODO app</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
-  <link rel="stylesheet" href="styles.css">
-  <meta name="author" content="Paulina Weiher">
-  <meta name="keywords" content="todo list project app">
-  <meta name="description" content="Interactive to do list of daily tasks">
-</head>
+  <body>
+    <header>
+      <nav>
+        <ol>
+          <li>
+            <a
+              href="https://github.com/theCieniu/todo"
+              target="_blank"
+              title="github profile"
+              ><i class="fab fa-github"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/theCieniu"
+              target="_blank"
+              title="twitter profile"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </li>
 
-<body>
+          <li>
+            <a
+              href="https://www.instagram.com/thecieniu/"
+              target="_blank"
+              title="ginstagram profile"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+        </ol>
+      </nav>
+    </header>
 
-  <header>
-    <nav>
-      <ol>
-        <li><a href="https://github.com/theCieniu/todo"><i class="fab fa-github"></i></a></li>
-        <li><a href="https://www.instagram.com/thecieniu/"><i class="fab fa-instagram"></i></a></li>
-      </ol>
-    </nav>
-  </header>
+    <main>
+      <form>
+        <input
+          type="text"
+          class="todo-input"
+          placeholder="To do or not to do?"
+        />
+        <button class="todo-button" type="submit">
+          <i class="fas fa-plus-square"></i>
+        </button>
+      </form>
 
-  <main>
-    <form>
-      <input type="text" class="todo-input" placeholder="To do or not to do?">
-      <button class="todo-button" type="submit"><i class="fas fa-plus-square"></i></button>
-    </form>
+      <div class="title">
+        <h1>Your ToDo List:</h1>
+        <select class="todo-filter" name="todos">
+          <option value="all">All</option>
+          <option value="todo">To do</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
 
-    <div class="title">
-      <h1>Your ToDo List:</h1>
-      <select class="todo-filter" name="todos">
-        <option value="all">All</option>
-        <option value="todo">To do</option>
-        <option value="completed">Completed</option>
-      </select>
-    </div>
+      <ul class="todo-list"></ul>
+    </main>
 
-    <ul class="todo-list">
+    <footer>
+      Created by
+      <a href="https://github.com/theCieniu" target="_blank"
+        >Paulina Weiher @theCieniu</a
+      >
+      &copy; 2020
+    </footer>
 
-    </ul>
-
-
-
-  </main>
-
-  <footer>
-    Created by <a href="https://github.com/theCieniu" target="_blank">Paulina Weiher @theCieniu</a>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>

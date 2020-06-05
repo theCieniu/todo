@@ -1,0 +1,51 @@
+$dark: #010101;
+$light: #ffffff;
+$color1: #b7e841;
+$color2: #32c8b3;
+$bgcolor: #eeeeee;
+$gradient: linear-gradient(120deg, #b7e841, #32c8b3);
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: $gradient;
+  color: $light;
+  @include flex(column, center, center);
+  font-size: calc(1rem + 0.5vw);
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: calc(2rem + 1vw);
+}
+
+a {
+  color: $light;
+  text-decoration: none;
+  &:hover {
+    color: $dark;
+  }
+}
+
+@import "nav";
+@import "todo";
+@import "footer";

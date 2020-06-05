@@ -1,0 +1,262 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(120deg, #b7e841, #32c8b3);
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: calc(1rem + 0.5vw);
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: calc(2rem + 1vw);
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #010101;
+}
+
+header {
+  width: 100%;
+}
+
+nav {
+  background-color: #b7e841;
+}
+
+nav ol {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 1em;
+}
+
+nav li {
+  color: #010101;
+  margin: 0.5em 1em;
+}
+
+/*======= TASK INPUT ===========*/
+main {
+  width: 90vw;
+  max-width: 1000px;
+  margin: 1rem auto;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2em auto;
+}
+
+form input {
+  max-width: 80%;
+  outline-color: #32c8b3;
+}
+
+form input,
+form button {
+  font-size: calc(1.2rem + 1vw);
+  background: #ffffff;
+  color: #010101;
+  border: none;
+  padding: 0.5em;
+}
+
+form button {
+  background-color: #32c8b3;
+  color: #ffffff;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background-color: #b7e841;
+}
+
+/*======= TITLE AND FILTER  ===========*/
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 485px;
+  margin: 1.5em auto;
+}
+
+select {
+  border: none;
+  outline: none;
+  background-color: #32c8b3;
+  color: #ffffff;
+  padding: 0.4em;
+  font-size: 1.2em;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+select:hover {
+  background-color: #ffffff;
+  color: #010101;
+}
+
+/*======= TO DO LIST  ===========*/
+.todo-list {
+  font-size: 1.6rem;
+  margin: 1em auto;
+}
+
+.todo-list li {
+  margin: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1em;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: calc(1.2rem + 1vw);
+}
+
+.todo-list li:hover {
+  border: 2px solid white;
+}
+
+.list-btn {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+  opacity: 50%;
+  outline: none;
+  margin-left: 0.6em;
+  cursor: pointer;
+}
+
+.list-btn:hover {
+  opacity: 100%;
+}
+
+.fa-trash-alt,
+.fa-check-square,
+.fa-exclamation {
+  font-size: calc(1.2rem + 1vw);
+  pointer-events: none;
+}
+
+.priorityTask {
+  background: #ffffff;
+  color: #010101;
+  opacity: 100%;
+}
+
+.priorityTask button {
+  color: #010101;
+  opacity: 30%;
+}
+
+.priorityTask button:hover {
+  opacity: 60%;
+}
+
+.priorityTask .priority {
+  opacity: 60%;
+}
+
+.priorityTask .priority:hover {
+  opacity: 100%;
+}
+
+.checked {
+  text-decoration: line-through;
+  opacity: 30%;
+}
+
+.deleting {
+  -webkit-transform: translateY(8em) rotateZ(20deg);
+          transform: translateY(8em) rotateZ(20deg);
+  opacity: 0;
+}
+
+footer {
+  margin-top: auto;
+  background-color: #32c8b3;
+  color: #ffffff;
+  text-align: center;
+  padding: 0.5em;
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */
