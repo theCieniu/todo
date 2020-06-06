@@ -157,7 +157,7 @@ select {
   cursor: pointer;
 }
 
-select:hover {
+select:hover, select:active, select:focus {
   background-color: #ffffff;
   color: #010101;
 }

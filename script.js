@@ -2,6 +2,7 @@
 const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
+const filter = document.querySelector(".todo-filter");
 todoInput.focus();
 
 // EVENT LISTENERS
@@ -11,18 +12,25 @@ document.addEventListener("keydown", (event) => {
   if (event.code == "Enter" || event.code == "NumpadEnter") {
     newTodo(event);
   }
-})
+});
 
-todoList.addEventListener("click", listBtn)
+todoList.addEventListener("click", listBtn);
+
+filter.addEventListener("click", filtering);
 
 // FUNCTIONS
+function cl(text) {
+  console.log(text);
+}
+//constructing new task with buttons
 function newTodo(event) {
+  //preventing refreshing the page
   event.preventDefault();
-  // todo text
+  //creating todo text
   const newTodo = document.createElement("li");
-  const todoText = document.createElement("div");
+  const todoText = document.createElement("p");
   if (todoInput.value === "") {
-    todoText.textContent = "take a nap"
+    todoText.textContent = "take a nap";
   } else {
     todoText.textContent = todoInput.value;
   }
@@ -51,27 +59,65 @@ function newTodo(event) {
   todoInput.focus();
 }
 
-
+//buttons functionality
 function listBtn(event) {
-  const item = event.target
+  const item = event.target;
   let task = item.parentNode.parentNode;
+  //delete button
   if (item.classList[0] === "delete-btn") {
     task.classList.add("deleting");
     task.addEventListener("transitionend", () => {
       event.target.parentNode.parentNode.remove();
-    })
+    });
+    //completed task button
   } else if (item.classList[0] === "check-btn") {
     if (item.classList[2] === "checked") {
-      item.innerHTML = '<i class="far fa-check-square"></i>'
+      item.innerHTML = '<i class="far fa-check-square"></i>';
       event.target.parentNode.parentNode.classList.remove("checked");
       item.classList.remove("checked");
     } else {
-      event.target.parentNode.parentNode.classList.add("checked")
-      item.classList.add("checked")
-      item.innerHTML = '<i class="fas fa-check-square"></i>'
+      event.target.parentNode.parentNode.classList.add("checked");
+      item.classList.add("checked");
+      item.innerHTML = '<i class="fas fa-check-square"></i>';
     }
+    //priority button
   } else if (item.classList[0] === "priority") {
     task.classList.toggle("priorityTask");
     item.parentNode.classList.toggle("priority-btns");
+  }
+}
+
+//FILTERING TASKS TO DO
+function filtering(e) {
+  const todos = document.querySelector(".todo-list").childNodes;
+
+  switch (e.target.value) {
+    case "all":
+      todos.forEach(function (todo) {
+        todo.style.display = "";
+        todo.style.display = "flex";
+      });
+      break;
+
+    case "todo":
+      todos.forEach(function (todo) {
+        if (todo.classList.contains("checked")) {
+          todo.style.display = "none";
+        } else {
+          todo.style.display = "flex";
+        }
+      });
+      break;
+
+    case "completed":
+      todos.forEach(function (todo) {
+        if (todo.classList.contains("checked")) {
+          todo.style.display = "flex";
+        } else {
+          todo.style.display = "none";
+        }
+      });
+    default:
+      break;
   }
 }
