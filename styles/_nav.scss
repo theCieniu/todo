@@ -1,15 +1,25 @@
 header {
   width: 100%;
+  font-size: calc(1rem + 1vw);
 }
 nav {
   background-color: $color1;
-  ol {
-    list-style: none;
-    @include flex(row, flex-end, center);
-    margin-right: 1em;
+  @include flex(row, space-between, center);
+  button {
+    background-color: white;
+    color: &dark;
+    @include button-clear;
+    &:hover {
+      color: white;
+      background-color: $color2;
+    }
   }
-  li {
-    color: $dark;
-    margin: 0.5em 1em;
+  ul {
+    list-style: none;
+    @include flex(row, space-around, center);
+    margin: 1rem;
+  }
+  i {
+    margin: 0.5rem 1rem;
   }
 }

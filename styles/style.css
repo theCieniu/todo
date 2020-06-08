@@ -48,13 +48,45 @@ a:hover {
 
 header {
   width: 100%;
+  font-size: calc(1rem + 1vw);
 }
 
 nav {
   background-color: #b7e841;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-nav ol {
+nav button {
+  background-color: white;
+  color: nav button dark;
+  border: none;
+  border-radius: 2rem;
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem 2rem;
+  margin: 0.5rem 1rem;
+  font-size: calc(1rem + 0.5vw);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+nav button:hover {
+  color: white;
+  background-color: #32c8b3;
+}
+
+nav ul {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -63,18 +95,16 @@ nav ol {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 1em;
+  margin: 1rem;
 }
 
-nav li {
-  color: #010101;
-  margin: 0.5em 1em;
+nav i {
+  margin: 0.5rem 1rem;
 }
 
 /*======= TASK INPUT ===========*/
@@ -257,10 +287,45 @@ select:hover, select:active, select:focus {
 
 footer {
   margin-top: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #32c8b3;
   color: #ffffff;
   text-align: center;
   padding: 0.5em;
   width: 100%;
+}
+
+footer p {
+  margin: 0.5rem 1rem;
+}
+
+footer button {
+  background-color: white;
+  color: footer button dark;
+  border: none;
+  border-radius: 2rem;
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem 2rem;
+  margin: 0.5rem 1rem;
+  font-size: calc(1rem + 0.5vw);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+footer button:hover {
+  color: white;
+  background-color: #b7e841;
 }
 /*# sourceMappingURL=style.css.map */

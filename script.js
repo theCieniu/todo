@@ -3,6 +3,8 @@ const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
 const filter = document.querySelector(".todo-filter");
+const importButton = document.getElementById("import-button");
+const clearButton = document.getElementById("clear-button");
 todoInput.focus();
 
 // EVENT LISTENERS
@@ -17,6 +19,11 @@ document.addEventListener("keydown", (event) => {
 todoList.addEventListener("click", listBtn);
 
 filter.addEventListener("click", filtering);
+
+importButton.addEventListener("click", getTodosFromLocal);
+clearButton.addEventListener("click", clearList);
+
+document.addEventListener("DOMContentLoaded", getTodosFromLocal);
 
 // FUNCTIONS
 function cl(text) {
@@ -79,8 +86,9 @@ function listBtn(event) {
     task.addEventListener("transitionend", () => {
       event.target.parentNode.parentNode.remove();
     });
-    //completed task button
-  } else if (item.classList[0] === "check-btn") {
+    deleteFromLocal(item);
+  } //completed task button
+  else if (item.classList[0] === "check-btn") {
     if (item.classList[2] === "checked") {
       item.innerHTML = '<i class="far fa-check-square"></i>';
       event.target.parentNode.parentNode.classList.remove("checked");
@@ -133,4 +141,47 @@ function filtering(e) {
     default:
       break;
   }
+}
+
+// Local storage
+
+function saveLocal(task) {
+  let tasks;
+  if (localStorage.getItem("tasks") === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem("tasks"));
+  }
+  if (task == "") {
+    tasks.push("take a nap");
+  } else {
+    tasks.push(task);
+  }
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function getTodosFromLocal() {
+  todoList.innerHTML = "";
+  let tasks;
+  if (localStorage.getItem("tasks") === null) {
+    alert("You don't have anything to do!");
+  } else {
+    tasks = JSON.parse(localStorage.getItem("tasks"));
+    tasks.forEach(function (task) {
+      createTodo(task);
+    });
+  }
+  todoInput.focus();
+}
+
+function clearList() {
+  todoList.innerHTML = "";
+  localStorage.clear();
+}
+
+function deleteFromLocal(deleted) {
+  let text = deleted.parentNode.parentNode.children[0].textContent;
+  let tasks = JSON.parse(localStorage.getItem("tasks"));
+  tasks.splice(tasks.indexOf(text), 1);
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 }

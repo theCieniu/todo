@@ -1,8 +1,21 @@
 footer {
   margin-top: auto;
+  @include flex(row, space-between, center);
   background-color: $color2;
   color: $light;
   text-align: center;
   padding: 0.5em;
   width: 100%;
+  p {
+    margin: 0.5rem 1rem;
+  }
+  button {
+    background-color: white;
+    color: &dark;
+    @include button-clear;
+    &:hover {
+      color: white;
+      background-color: $color1;
+    }
+  }
 }
