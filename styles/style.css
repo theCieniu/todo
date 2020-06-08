@@ -242,7 +242,11 @@ select:hover, select:active, select:focus {
 
 .checked {
   text-decoration: line-through;
-  opacity: 30%;
+  opacity: 40%;
+}
+
+.checked:hover {
+  opacity: 100%;
 }
 
 .deleting {

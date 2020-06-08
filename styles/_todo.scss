@@ -119,7 +119,10 @@ select {
 
 .checked {
   text-decoration: line-through;
-  opacity: 30%;
+  opacity: 40%;
+  &:hover {
+    opacity: 100%;
+  }
 }
 
 .deleting {

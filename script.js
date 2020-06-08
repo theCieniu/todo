@@ -22,39 +22,49 @@ filter.addEventListener("click", filtering);
 function cl(text) {
   console.log(text);
 }
+
+//adding buttons to the todo
+function createIconButton(task) {
+  const listBtns = document.createElement("div");
+  function creatingIcon(iconClass1, iconClass2, iconName) {
+    let listButton = document.createElement("button");
+
+    let buttonIcon = document.createElement("i");
+    buttonIcon.classList.add(iconClass1);
+    buttonIcon.classList.add(iconClass2);
+    listButton.classList.add(iconName);
+    listButton.classList.add("list-btn");
+    listButton.appendChild(buttonIcon);
+    listBtns.appendChild(listButton);
+  }
+  creatingIcon("far", "fa-check-square", "check-btn");
+  creatingIcon("fas", "fa-exclamation", "priority");
+  creatingIcon("fas", "fa-trash-alt", "delete-btn");
+  task.appendChild(listBtns);
+}
+
 //constructing new task with buttons
+function createTodo(text) {
+  const newTodo = document.createElement("li");
+  const todoText = document.createElement("p");
+  if (text == "") {
+    todoText.textContent = "take a nap";
+  } else {
+    todoText.textContent = text;
+  }
+  newTodo.appendChild(todoText);
+  //adding buttons
+  createIconButton(newTodo);
+  // adding constructed todo task
+  todoList.appendChild(newTodo);
+}
+
 function newTodo(event) {
   //preventing refreshing the page
   event.preventDefault();
-  //creating todo text
-  const newTodo = document.createElement("li");
-  const todoText = document.createElement("p");
-  if (todoInput.value === "") {
-    todoText.textContent = "take a nap";
-  } else {
-    todoText.textContent = todoInput.value;
-  }
-  newTodo.appendChild(todoText);
-  // buttons
-  const listBtns = document.createElement("div");
-  const checkBtn = document.createElement("button");
-  checkBtn.classList.add("check-btn");
-  checkBtn.classList.add("list-btn");
-  checkBtn.innerHTML = '<i class="far fa-check-square"></i>';
-  listBtns.appendChild(checkBtn);
-  const priorityBtn = document.createElement("button");
-  priorityBtn.classList.add("priority");
-  priorityBtn.classList.add("list-btn");
-  priorityBtn.innerHTML = '<i class="fas fa-exclamation"></i>';
-  listBtns.appendChild(priorityBtn);
-  const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("delete-btn");
-  deleteBtn.classList.add("list-btn");
-  deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
-  listBtns.appendChild(deleteBtn);
-  // adding constructed todo task
-  newTodo.appendChild(listBtns);
-  todoList.appendChild(newTodo);
+  //creating todo
+  createTodo(todoInput.value);
+  saveLocal(todoInput.value);
   todoInput.value = "";
   todoInput.focus();
 }
@@ -94,8 +104,10 @@ function filtering(e) {
   switch (e.target.value) {
     case "all":
       todos.forEach(function (todo) {
-        todo.style.display = "";
         todo.style.display = "flex";
+        if (todo.classList.contains("checked")) {
+          todo.style.opacity = "40%";
+        }
       });
       break;
 
@@ -113,6 +125,7 @@ function filtering(e) {
       todos.forEach(function (todo) {
         if (todo.classList.contains("checked")) {
           todo.style.display = "flex";
+          todo.style.opacity = "80%";
         } else {
           todo.style.display = "none";
         }
